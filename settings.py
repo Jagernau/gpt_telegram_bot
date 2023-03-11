@@ -2,7 +2,7 @@ import openai
 import os
 from os.path import join, dirname
 import dotenv
-import telebot
+from aiogram import Bot, Dispatcher, executor, types
 
 
 dotenv_path = join(dirname(__file__), ".env")
@@ -17,5 +17,6 @@ USER_NAME = os.environ.get("USER_NAME")
 
 openai.api_key = OPENAI_TOKEN
 
-bot = telebot.TeleBot(str(TELEGRAM_TOKEN))
+bot = Bot(token=str(TELEGRAM_TOKEN))
+dp = Dispatcher(bot)
 
