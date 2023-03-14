@@ -2,7 +2,7 @@ from settings import openai
 
 
 
-def get_message(prompt): 
+def get_message(prompt: str) -> str: 
     """
     Generates text completion based on given prompt using the OpenAI API.
 
@@ -15,7 +15,7 @@ def get_message(prompt):
     completion = openai.Completion.create(engine="text-davinci-003", prompt=prompt,temperature=0.5, max_tokens=1000)
     return completion.choices[0]['text']
 
-def get_pic(prompt):
+def get_pic(prompt: str):
     """
     Generates image based on given prompt using the OpenAI API.
 
